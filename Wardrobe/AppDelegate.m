@@ -7,17 +7,61 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LoginViewController.h"
+#import "BaseTabbarViewController.h"
 @interface AppDelegate ()
-
+{
+    BaseTabbarViewController *tabController;//tabbarController
+    
+    LoginViewController *loginViewController;
+}
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    //创建
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    // 读取账户
+    NSString * telephone = [userDefaults objectForKey:@"telephone"];
+    //读取密码
+    NSString * password = [userDefaults objectForKey:@"password"];
+    
+//    if (telephone != nil && password != nil) {
+//        //自动登录跳转到首页
+        [self setupRootController];
+//    }else{
+        //创建登录Controller
+//        [self setupLoginController];
+//    }
+    
+    
+    //注册登录成功后通知跳到首页
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(LoginCurrentToHomePageNotificationAction) name:@"LoginCurrentToHomePageNotification" object:nil];
+    
     return YES;
+}
+
+//创建tabbarController
+-(void)setupRootController{
+    tabController = [[BaseTabbarViewController alloc]init];
+    self.window.rootViewController = tabController;
+}
+
+//创建登录Controller
+-(void)setupLoginController{
+    loginViewController = [[LoginViewController alloc]init];
+    UINavigationController *navLoginViewController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+    
+    self.window.rootViewController = navLoginViewController;
+}
+
+-(void)LoginCurrentToHomePageNotificationAction{
+    //自动登录跳转到首页
+    [self setupRootController];
 }
 
 

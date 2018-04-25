@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="InfomationPhotoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-jU-nxA">
+                        <rect key="frame" x="10" y="12" width="39.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="problemTip_close" translatesAutoresizingMaskIntoConstraints="NO" id="g74-on-gA0">
+                        <rect key="frame" x="294" y="13.5" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="ALK-2Q-UAn"/>
+                            <constraint firstAttribute="height" constant="16" id="YCW-ph-dTp"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WRc-H9-c7R">
+                        <rect key="frame" x="244" y="2" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="7f6-P3-n0a"/>
+                            <constraint firstAttribute="width" constant="40" id="bUO-go-eii"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eO0-Ru-abF">
+                        <rect key="frame" x="0.0" y="42.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="jqd-pz-7Y6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="eO0-Ru-abF" secondAttribute="bottom" id="1lg-np-MlA"/>
+                    <constraint firstItem="IoA-jU-nxA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bum-Jc-Uir"/>
+                    <constraint firstItem="g74-on-gA0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qw5-Vy-ak0"/>
+                    <constraint firstItem="g74-on-gA0" firstAttribute="leading" secondItem="WRc-H9-c7R" secondAttribute="trailing" constant="10" id="TVV-LQ-PRX"/>
+                    <constraint firstItem="IoA-jU-nxA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ThE-sT-qBT"/>
+                    <constraint firstAttribute="trailing" secondItem="eO0-Ru-abF" secondAttribute="trailing" id="aeJ-cL-lx9"/>
+                    <constraint firstAttribute="trailing" secondItem="g74-on-gA0" secondAttribute="trailing" constant="10" id="bem-sV-lkf"/>
+                    <constraint firstItem="WRc-H9-c7R" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dv6-e0-0Lp"/>
+                    <constraint firstItem="eO0-Ru-abF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="phQ-SE-Vv3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="imgView" destination="WRc-H9-c7R" id="aj7-TR-dmK"/>
+                <outlet property="titlelable" destination="IoA-jU-nxA" id="NlH-rH-Kf3"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="problemTip_close" width="22" height="22"/>
+    </resources>
+</document>
